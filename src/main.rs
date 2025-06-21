@@ -9,4 +9,5 @@ pub fn derive_crap(input: TokenStream) -> TokenStream {
     // this is just debug for now
     println!("Deriving Crap for: {}", input.ident);
 
+    TokenStream::new()
 }
