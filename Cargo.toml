@@ -9,3 +9,11 @@ repository = "https://github.com/tazyfoundsoup/crap"
 readme = "README.md"
 categories = ["command-line-utilities"]
 keywords = ["cli", "argument", "parsing", "crap", "clap"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "2.0", features = ["full"] }
+quote = "1.0"
+proc-macro2 = "1.0"
