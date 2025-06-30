@@ -2,18 +2,11 @@
 name = "crap"
 version = "0.1.0"
 edition = "2021"
-authors = ["tazy <gardendistrict0x0@outlook.com>"]
-description = "crap: The better clap"
-license = "MIT OR Apache-2.0"
-repository = "https://github.com/tazyfoundsoup/crap"
-readme = "README.md"
-categories = ["command-line-utilities"]
-keywords = ["cli", "argument", "parsing", "crap", "clap"]
-
-[lib]
-proc-macro = true
 
 [dependencies]
 syn = { version = "2.0", features = ["full"] }
-quote = "1.0"
-proc-macro2 = "1.0"
+quote = "1"
+proc-macro2 = "1"
+
+[lib]
+proc-macro = true
