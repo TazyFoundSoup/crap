@@ -4,7 +4,7 @@
 
 extern crate proc_macro;
 use proc_macro::TokenStream;
-use syn::{parse_macro_input, DeriveInput};
+use syn::{parse_macro_input, DeriveInput, Meta, Lit};
 use quote::quote;
 
 struct Command {
@@ -36,9 +36,13 @@ pub fn crap_derive(input: TokenStream) -> TokenStream {
                     for nested in meta_list.nested {
                         if let NestedMeta::Meta(Meta::NameValue(nv)) = nested {
                         // Now we can check each name-key pair in the attribute
+                        // If the key is "short", we can get the value for later use
                         if nv.path.is_ident("short") {
-                            // TODO: Make logic
+                            if let Lit::Str(lit) = &nv.lit {
+                                let short = lit.value();
+                            }
                         }
+                        
                     }
                     }
                 }
